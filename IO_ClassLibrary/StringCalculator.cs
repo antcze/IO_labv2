@@ -9,7 +9,7 @@ namespace IO_ClassLibrary
             if (number.Length == 0) return 0;
             else
             {
-                string[] input_numbers = number.Split(',');
+                string[] input_numbers = number.Split(',','\n');
                 int sum = 0;
                 foreach(var nr in input_numbers)
                 {

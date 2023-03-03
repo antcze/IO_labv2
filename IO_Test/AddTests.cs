@@ -35,5 +35,16 @@ namespace IO_Test
 
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData("2\n3", 5)]
+        [InlineData("11\n9", 20)]
+        public void TwoNumbersSperatedByNewLine_Should_ReturnSum(string input, int expected)
+        {
+            var Calculator = new StringCalculator();
+            var result = Calculator.Add(input);
+
+            Assert.Equal(expected, result);
+        }
     }
 }
