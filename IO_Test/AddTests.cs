@@ -46,5 +46,16 @@ namespace IO_Test
 
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData("2\n3,6", 11)]
+        [InlineData("1,11\n9", 21)]
+        public void ThreeNumbersSperatedFreelyByNewlineOrComma_Should_ReturnSum(string input, int expected)
+        {
+            var Calculator = new StringCalculator();
+            var result = Calculator.Add(input);
+
+            Assert.Equal(expected, result);
+        }
     }
 }
