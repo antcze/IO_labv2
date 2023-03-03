@@ -9,9 +9,14 @@ namespace IO_ClassLibrary
             if (number.Length == 0) return 0;
             else
             {
-                return Int32.Parse(number);
+                string[] input_numbers = number.Split(',');
+                int sum = 0;
+                foreach(var nr in input_numbers)
+                {
+                    sum += int.Parse(nr);
+                }
+                return sum;
             }
-            return 0;
         }
     }
 }
