@@ -13,7 +13,9 @@ namespace IO_ClassLibrary
                 int sum = 0;
                 foreach(var nr in input_numbers)
                 {
-                    sum += int.Parse(nr);
+                    int value = int.Parse(nr);
+                    if (value < 0) throw new ArgumentOutOfRangeException();
+                    sum += value;
                 }
                 return sum;
             }
