@@ -15,6 +15,7 @@ namespace IO_ClassLibrary
                 {
                     int value = int.Parse(nr);
                     if (value < 0) throw new ArgumentOutOfRangeException();
+                    if (value > 1000) continue;
                     sum += value;
                 }
                 return sum;

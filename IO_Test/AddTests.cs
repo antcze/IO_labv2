@@ -68,5 +68,17 @@ namespace IO_Test
 
             Assert.Throws<ArgumentOutOfRangeException>(()=>Calculator.Add(input));
         }
+
+        [Theory]
+        [InlineData("2\n3,1003",5)]
+        [InlineData("1000\n9",1009)]
+        [InlineData("12345",0)]
+        public void NumbersGreaterThan1000_Should_BeIgnored(string input, int expected)
+        {
+            var Calculator = new StringCalculator();
+            var result = Calculator.Add(input);
+
+            Assert.Equal(expected, result);
+        }
     }
 }
